@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercise 5.2 - The Proxy Pattern</title>
+
+        <link 
+            rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+            crossorigin="anonymous" />
+            <!-- jQuery Library -->
+            <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    </head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Home</a>
+    </nav>
+    <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Exercise 5.2 - The Proxy Pattern</h2>
+
+                <button class="btn btn-primary" id="btnPreviewProxy">Preview Proxy</button>
+
+                <br>
+                <span id="spanProxyResults"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+
+            var motorcycle = {
+                make: "Triumph", 
+                model: "Tiger", 
+                display: function() { // clear the span tag before writing again
+                    $("#spanProxyResults").html("");
+
+                    $("#spanProxyResults").append("<br />Make: "  + this.make + "<br />" + "Model: " + this.model);
+                }
+            };
+
+            $("#btnPreviewProxy").click($.proxy(motorcycle, "display"));
+
+        });
+    </script>
+
+
+</body>
+</html>
