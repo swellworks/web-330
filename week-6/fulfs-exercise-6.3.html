@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Exercise 6.2</title>
+        <title>Exercise 6.3</title>
 
         <!-- Stylesheet - Bootstrap -->
         <link rel="stylesheet" 
@@ -30,36 +30,32 @@
    
   <div class="containter" role="main">
       <br><br>
-      <h2>Person Object Literal Example</h2>
+      <h2>Person View Model</h2>
 
-        <div class="form-group">
-            <label for="txtFirstName">First Name:</label>
-            <input type="text" class="form-control alert-warning" data-bind="value: firstName" id="txtFirstName">
-        </div>
+      <div class="form-group">
+          <label for="txtFirstName">First Name:</label>
+          <input type="text" class="form-control alert-warning" data-bind="value: firstName" id="txtFirstName">
+      </div>
 
-        <div class="form-group">
-            <label for="txtLastName">Last Name:</label>
-            <input type="text" class="form-control alert-warning" data-bind="value: lastName" id="txtLastName">
-        </div>
+      <div class="form-group">
+          <label for="txtLastName">Last Name: </label>
+          <input type="text" class="form-control alert-warning" data-bind="value: lastName" id="txtLastName">
+      </div>
 
-        <div class="form-group">
-            <label for="txtEmail">Email:</label>
-            <input type="text" class="form-control alert-warning" data-bind="value: email" id="txtEmail">
-        </div>
-
+      <div class="form-group">
+          <label for="txtEmail">Email:</label>
+          <input type="text" class="form-control alert-warning" data-bind="value: email" id="txtEmail">
+      </div>
   </div>
    
 <script>
+    function PersonViewModel() {
+        this.firstName = ko.observable("Abraham");
+        this.lastName = ko.observable("Lincoln");
+        this.email = ko.observable("alincoln@domain.com");
+    }
 
-    var PersonViewModel = {
-        firstName: "Abraham", 
-        lastName: "Lincoln", 
-        email: "alincoln@domain.com"
-    };
-
-    ko.applyBindings(PersonViewModel);
-
-
+    lo.applyBindings(new PersonViewModel());
 </script>
    
 </body>
