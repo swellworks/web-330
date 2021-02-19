@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Exercise 7.2</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-v3.5.1.js"></script>
+</head>
+<body>
+
+    <div role="main" class="container">
+        <br/><br/>
+
+        <h2>Exercise 7.2 - The "if" Binding</h2>
+        <div class="form-group">
+            <label for="firstName">First Name: </label>
+            <input type="text" data-bind="value: first" class="form-control" id="firstName"/>
+        </div>
+
+        <div data-bind="if: displayName">
+            <div class="form-group">
+                <label for="lastName">Last Name: </label>
+                <input type="text" data-bind="value: last" class="form-control"
+       id="lastName"/>
+            </div>
+        </div>
+
+        <br/>
+
+        <div data-bind="if: last">
+            <h2><span id="fullName" class="alert-success" data-bind="text:
+       displayBook"></span></h2>
+        </div>
+
+        <br/>
+
+       </div>
+
+
+
+<script>
+    function PersonViewModel() {
+        this.first = ko.observable("");
+        this.last = ko.observable("");
+
+        this.displayName = ko.pureComputed(function () {
+            return this.first();
+        }, this);
+
+        this.displayBook = ko.pureComputed(function () {
+            return this.first() + "\n" + this.last();
+        }, this);
+    }
+
+    ko.applyBindings(new PersonViewModel());
+</script>
+
+</body>
+</html>
