@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Exercise 7.3</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-v3.5.1.js"></script>
+</head>
+
+<body>
+    <div role="main" class="container">
+        <br/><br/>
+        <h2>The "foreach" binding</h2>
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: textbook">
+                <tr>
+                    <td data-bind="text: title"></td>
+                    <td data-bind="text: price"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        </div>
+
+<script>
+function BookViewModel() {
+
+    this.textbook = ko.observableArray([
+        {title: "1984", price: 7.15},
+        {title: "To Kill a Mockingbird", price: 7.76},
+        {title: "Fahrenheit 451", price: 1.61},
+        {title: "Brave New World", price: 9.81}
+    ]);
+}
+
+ko.applyBindings(new BookViewModel());
+
+</script>
+
+</body>
+</html>
