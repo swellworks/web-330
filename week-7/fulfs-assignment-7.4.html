@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Perry Fulfs - Assignment 7.4</title>
+
+    <!-- Stylesheet - Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- JavaScript Libraries -->
+    <script src="../knockout-v3.5.1.js"></script>
+</head>
+<body>
+
+<div role="main" class="container">
+<br/><br/>
+
+    <!-- error messages -->
+    <!-- <div class="alert-box" data-bind="if: salary() < 0">
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap!</strong> Format error...
+        </div>
+    </div> -->
+    <br /> 
+
+    <!-- <div class="form-group">
+        <h2>Other Bindings Example</h2>
+            <label for="txtSalary">Salary Expectation </label> | <a data-bind="attr: {href:
+       calculatorUrl}" target="_blank">Paycheck Calculator</a>
+                <input type="text" class="form-control" placeholder="Enter a number..." databind="value: salary" id="txtSalary"/>
+    </div>
+
+    <div class="form-group" data-bind="if: salary()">
+        <h4>Actual Salary: <span data-bind="style: {color: salary() <= 0 ? 'red' : 'black'},
+       text: formatSalary(salary())"></span></h4>
+    </div> -->
+    <br/>
+    <table class="table table-dark table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: textbook">
+            <tr>
+                <td data-bind="text: title"></td>
+                <td data-bind="text: description"></td>
+                <td data-bind="text: link"> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+function BookViewModel() {
+
+this.textbook = ko.observableArray([
+    {title: "1984", description: "Written more than 70 years ago, 1984 was George Orwell’s chilling prophecy about the future.", link: "https://www.amazon.com/1984-Signet-Classics-George-Orwell/dp/0451524934"},
+
+    {title: "To Kill a Mockingbird", description: "A haunting portrait of race and class, innocence and injustice, hypocrisy and heroism, tradition and transformation in the Deep South of the 1930s.", link: "https://www.amazon.com/To-Kill-Mockingbird-Harper-Lee-audiobook/dp/B00K1HPPXO/ref=sr_1_1?dchild=1&keywords=to+kill+a+mockingbird&qid=1613795604&s=books&sr=1-1"},
+
+    {title: "Fahrenheit 451", description: "Ray Bradbury's internationally acclaimed novel Fahrenheit 451 is a masterwork of 20th-century literature set in a bleak, dystopian future.", link: "https://www.amazon.com/Fahrenheit-451-Ray-Bradbury/dp/0006546064/ref=sr_1_2?dchild=1&keywords=Fahrenheit+451&qid=1613796083&s=books&sr=1-2"},
+
+    {title: "Brave New World", description: "Aldous Huxley's profoundly important classic of world literature, Brave New World is a searching vision of an unequal, technologically-advanced future where humans are genetically bred.", link: "https://www.amazon.com/Brave-New-World-Revisited/dp/0060776099/ref=sr_1_2?dchild=1&keywords=Brave+New+World&qid=1613796252&s=books&sr=1-2"},
+
+    {title: "Dune", description: "Frank Herbert’s classic masterpiece—a triumph of the imagination and one of the bestselling science fiction novels of all time.", link: "https://www.amazon.com/gp/product/B00B7NPRY8/ref=dbs_a_def_rwt_hsch_vapi_tkin_p1_i0"},
+
+]);
+}
+
+ko.applyBindings(new BookViewModel());
+
+</script>
+
+</body>
+</html>
