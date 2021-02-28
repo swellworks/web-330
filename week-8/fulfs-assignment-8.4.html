@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Exercise 8.3</title>
+    <title>Assignment 8.4</title>
 
     <!-- Stylesheet - Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -20,6 +20,7 @@
 <body>
 
 <div role="main" class="container">
+<br/><br/>
     <br/><br/>
             <div class="row" data-bind="if: error">
                 <div class="col-sm-12">
@@ -70,8 +71,39 @@
                     </div>
                 </div>
             </div>
-        <div class="col-sm-4" data-bind="if: Employee">
-            <div class="card card-inverse" style="background-color: #333; border-color:
+        <div class="col-sm-4" data-bind="if: Employee" style="border: 1px solid red;">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card card-inverse" style="background-color: #333; border-color:
+           #333; color: white;">
+    
+            <div class="card-block p-3">
+                <h3 class="card-title">Employee List</h3>
+                    <div class="card-text">
+            <div class="form-group row">
+                <label for="txtEmployeeName" class="col-2 col-form-label">Name: </label>
+                <div class="col-6">
+                    <input type="text" data-bind="value: nameToAdd, valueUpdate:
+           'afterkeydown'"
+            class="form-control" id="txtEmployeeName"/>
+                </div>
+                <div class="col-4">
+                    <a href="#" data-bind="click: add" class="btn btnprimary">Add</a>
+                </div>
+            </div>
+                        <div class="form-group">
+                            <label for="txtEmployeeName">Employee Name: </label>
+                            <select size="10" class="form-control" data-bind="options: employeeList"
+                        id="txtEmployeeName"></select>
+                        </div>
+                    </div>
+            </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="card card-inverse" style="background-color: #333; border-color:
        #333; color: white;">
                 <div class="card-block p-3">
                     <h3 class="card-title">Grocery List Item</h3>
@@ -87,7 +119,7 @@
                     </div>
                 </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <br/>
@@ -144,8 +176,12 @@
             self.Employees.push(l_Employee);
         }
     }
+
+
     
     ko.applyBindings(new EmployeeViewModel());
+
+
 </script>
 
 </body>
