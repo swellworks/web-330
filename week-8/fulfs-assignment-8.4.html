@@ -21,7 +21,6 @@
 
 <div role="main" class="container">
 <br/><br/>
-    <br/><br/>
             <div class="row" data-bind="if: error">
                 <div class="col-sm-12">
                     <div class="alert alert-danger" role="alert">
@@ -32,6 +31,7 @@
         <br />
         <h2>UD Example</h2>
         <div class="row">
+<!-- Add LEFT column -->
             <div class="col-sm-8">
                 <div class="card card-inverse" style="background-color: #333; border-color:
        #333; color: white;">
@@ -71,56 +71,33 @@
                     </div>
                 </div>
             </div>
-        <div class="col-sm-4" data-bind="if: Employee" style="border: 1px solid red;">
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="card card-inverse" style="background-color: #333; border-color:
-           #333; color: white;">
-    
-            <div class="card-block p-3">
-                <h3 class="card-title">Employee List</h3>
-                    <div class="card-text">
-            <div class="form-group row">
-                <label for="txtEmployeeName" class="col-2 col-form-label">Name: </label>
-                <div class="col-6">
-                    <input type="text" data-bind="value: nameToAdd, valueUpdate:
-           'afterkeydown'"
-            class="form-control" id="txtEmployeeName"/>
-                </div>
-                <div class="col-4">
-                    <a href="#" data-bind="click: add" class="btn btnprimary">Add</a>
-                </div>
-            </div>
-                        <div class="form-group">
-                            <label for="txtEmployeeName">Employee Name: </label>
-                            <select size="10" class="form-control" data-bind="options: employeeList"
-                        id="txtEmployeeName"></select>
+<!-- Add RIGHT column -->
+            <div class="col-sm-4">
+                <div class="card card-inverse" style="background-color: #333; border-color:
+        #333; color: white;">
+        <div class="card-block p-3">
+            <h3 class="card-title">Add Employee</h3>
+            <div class="card-text">
+                    <div class="form-group row">
+                        <label for="txtEmployeeName" class="col-3 col-form-label">Name: </label>
+                        <div class="col-6">
+                            <input type="text" data-bind="value: nameToAdd, valueUpdate:
+                    'afterkeydown'"
+                    class="form-control" id="txtEmployeeName"/>
+                        </div>
+                        <div class="col-2">
+                            <a href="#" data-bind="click: add" class="btn btn-primary">Add</a>
                         </div>
                     </div>
-            </div>
-                    </div>
+                <div class="form-group">
+                    <label for="txtEmployeeName">Employee Name: </label>
+                    <select size="10" class="form-control" data-bind="options: employeeList"
+                id="txtEmployeeName"></select>
                 </div>
             </div>
-
-            <!-- <div class="card card-inverse" style="background-color: #333; border-color:
-       #333; color: white;">
-                <div class="card-block p-3">
-                    <h3 class="card-title">Grocery List Item</h3>
-                <div class="card-text">
-                    <div class="form-group">
-                        <label for="txtName">Name: </label>
-                            <input type="text" id="txtName" data-bind="value: Employee().Name"
-       class="form-control" />
-                    </div>
-                    <div class="form-group float-right">
-                        <button data-bind="click: $root.cancel" class="btn btn-group btndanger">Cancel</button>
-                        <button data-bind="click: $root.update" class="btn btn-group btnsuccess">Save</button>
-                    </div>
-                </div>
-                </div>
-            </div> -->
         </div>
+                </div>
+            </div>
     </div>
     <br/>
 </div>
